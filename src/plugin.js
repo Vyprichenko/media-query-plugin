@@ -102,7 +102,7 @@ module.exports = class MediaQueryPlugin {
                     // add query to chunk data if available
                     // can be used to determine query of a chunk (html-webpack-plugin)
                     if (queries) {
-                        chunk.query = queries[0];
+                        chunk.query = queries.join(', ');
                     }
 
                     // find existing js & css files of this chunk
