@@ -1,6 +1,6 @@
 {
-  "name": "media-query-plugin",
-  "version": "1.5.0",
+  "name": "@avtopro/media-query-plugin",
+  "version": "2.6.0",
   "description": "Webpack plugin for media query extraction.",
   "author": "Kai Falkowski",
   "license": "MIT",
@@ -36,6 +36,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SassNinja/media-query-plugin.git"
+    "url": "https://github.com/Vyprichenko/media-query-plugin.git"
   }
 }

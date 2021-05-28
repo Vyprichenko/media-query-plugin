@@ -132,10 +132,8 @@ module.exports = postcss.plugin('MediaQueryPostCSS', (options) => {
         {}
     );
 
-    function addToStore(name, atRule) {
+    function addToStore(name, atRule, query) {
         const css = postcss.root().append(atRule).toString();
-        const query = atRule.params;
-
         store.addMedia(name, css, options.path, query);
     }
 
@@ -193,7 +191,7 @@ module.exports = postcss.plugin('MediaQueryPostCSS', (options) => {
                             ? `${groupName}-${queryName}`
                             : `${options.basename}-${queryName}`;
 
-                        addToStore(name, atRule);
+                        addToStore(name, atRule, query);
 
                         return subtractBounds(remainder, queriesBounds[query]);
                     },
