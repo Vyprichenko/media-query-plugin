@@ -239,7 +239,9 @@ module.exports = class MediaQueryPlugin {
 
             // consider html-webpack-plugin and provide extracted files
             // which can be accessed in templates via htmlWebpackPlugin.files.extracted
-            // { css: [{file:'',query:''},{file:'',query:''}] }
+            // basename is for mapping media-query file (like "style-xs.css")
+            // to its medialess basis (like "style.css")
+            // { css: [{file:'',query:'',basename:''},{file:'',query:'',basename:''}] }
 
             try {
                 const htmlWebpackPlugin = require('html-webpack-plugin');
@@ -260,7 +262,8 @@ module.exports = class MediaQueryPlugin {
                                     extracted[ext] = extracted[ext] || [];
                                     extracted[ext].push({
                                         file: file,
-                                        query: query
+                                        query: query,
+                                        basename: this.options.basename
                                     });
                                 }
                                 assetJson.push(file);
